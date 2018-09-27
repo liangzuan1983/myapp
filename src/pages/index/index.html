@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html class="has-topbar has-bottombar">
+
+<head>
+  <meta name="viewport" content="viewprot-fit:contain,width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+  <!-- <link rel="stylesheet" href="//at.alicdn.com/t/font_441587_toe7rrv4mp99t3xr.css" /> -->
+  <!-- <link rel="stylesheet" href="https://cache.amap.com/lbs/static/main1119.css"/>   -->
+  <!-- <script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.9&ztdcg=7ebc853e8584bcc8a631c6e728e3f526"></script>
+  <script type="text/javascript" src="https://cache.amap.com/lbs/static/addToolbar.js"></script> -->
+  <script type="text/javascript">
+  document.onreadystatechange = closeLoader;
+
+  function closeLoader() {
+    var loader = document.getElementById("init-loader");
+    if (loader) {
+      loader.remove();
+    }
+    // console.log("加载完了·····")
+  }
+
+  function fontSize() {
+    var view_width = document.getElementsByTagName('html')[0].getBoundingClientRect().width;
+    //       console.log("屏幕尺寸:"+view_width);
+    var _html = document.getElementsByTagName('html')[0];
+    var htmlfontsize = 0;
+    view_width > 768 ? htmlfontsize = 50 * 768 / 375 :
+      view_width > 376 ? htmlfontsize = view_width * 48 / 375 : htmlfontsize = view_width * 50 / 375;
+    // console.log(htmlfontsize);
+    _html.style.fontSize = (htmlfontsize < 70 ? htmlfontsize : 70) + "px";
+  }
+  fontSize();
+  window.onresize = function() {
+    fontSize();
+  }
+
+  function dovue(url) {
+    var even = document.createEvent('HTMLEvents');
+    even.initEvent('navdo', false, false);
+    even.url = url;
+    document.dispatchEvent(even);
+  }
+
+  function doTarget(para){
+    para=para.split(",");
+    window.location.href=para[0]+"itallList?VIEWSHOW_NOHEAD&TARGET_NEW&usercode="+para[1];
+    // location.href="https://www.baidu.com/?TARGET_NEW&usercode=";
+  }
+  </script>
+  <meta charset="utf-8">
+  <title>新差旅</title>
+</head>
+<body>
+  <div id="app"></div>
+</body>
+</html>
